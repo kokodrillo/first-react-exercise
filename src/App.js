@@ -5,7 +5,7 @@ import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
  state = {
-   username: 'xxxxxx'
+   username: ''
  }
 
 inputChangedHandler = (event) => {
@@ -19,12 +19,13 @@ render() {
     cursor: "pointer",
     boxshadow: "0 2px 3px #ccc",
     width: "300px",
-    height: "150px",
+    height: "350px",
     textAlign: "center",
-    padding:"90px 50px ",
+    padding:"100px 50px ",
     backgroundColor: "rgb(179, 176, 176)",
     fontSize: "22px",
     color: "white",
+    borderRadius: "10px",
   }
 
   return (
