@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import UserInput from './User/UserInput';
-import UserOutput from './User/UserOutput';
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
 
-function App() {
- // state = {
- //    users: [
- //      { username: 'Majajam'},
- //      { username: 'Nikola'},
- //      { username: 'Anjaa'}
- //    ]
- //  }
+class App extends Component {
+ state = {
+   username: 'Majajam'
+ }
 
 
+inputChangedHandler = (event) => {
+  this.setState({username: event.target.value})
+}
+
+render() {
   return (
     <div className ="App">
-    <UserOutput/>
-    <UserInput/>
+      < UserOutput
+          userName={this.state.username}/>
 
+      < UserInput
+          changed={this.inputChangedHandler}
+          currentName={this.state.username}/>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
